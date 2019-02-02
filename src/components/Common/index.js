@@ -68,8 +68,11 @@ export const HighlightedIntro = styled.span`
         z-index: -3;
         transform: translate(-15px);
         top: 0;
+        ${media.maxWidth.sm} {
+            height: 20px;
+        }
         ${media.maxWidth.xxs} {
-            background-color: transparent;
+            transform: translate(-10px);
         }
     }
     ${media.minWidth.xxs} {

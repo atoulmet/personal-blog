@@ -10,7 +10,7 @@ class Introduction extends Component {
   return (
     <Container>
       <Text>
-        I'm Alexia, <HighlightedIntro localeColor={localeColor}>a fullstack software engineer</HighlightedIntro>.
+        I'm Alexia, <HighlightedIntro localeColor={localeColor}>a</HighlightedIntro><HighlightedIntro localeColor={localeColor}> fullstack</HighlightedIntro><HighlightedIntro localeColor={localeColor}> software</HighlightedIntro><HighlightedIntro localeColor={localeColor}> engineer</HighlightedIntro>.
         I'm passionate about the tech industry, 
         gender diversity and creation.
       </Text>
