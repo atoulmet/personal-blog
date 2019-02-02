@@ -12,24 +12,15 @@ class Navbar extends React.PureComponent {
 
         return (
             menuDataWithActive.map(({ title, link, isActive }) => {
-                const localeColor = getLocaleColor(pathname)
+                const localeColor = getLocaleColor(link)
 
-                if (isActive) {
                     return (
-                        <ItemWrapper key={link}>
-                        <HighlightedItem localeColor={localeColor} >
-                            <NavItem to={link}>{title}</NavItem>
-                        </HighlightedItem>
+                        <ItemWrapper key={link} isActive={isActive}>
+                            <HighlightedItem localeColor={localeColor} >
+                                <NavItem to={link}>{title}</NavItem>
+                            </HighlightedItem>
                         </ItemWrapper>
                     )
-                }
-                else {
-                    return (
-                        <ItemWrapper key={link}>
-                        <NavItem to={link}>{title}</NavItem>
-                        </ItemWrapper>
-                    )
-                }
             }
             )
         )

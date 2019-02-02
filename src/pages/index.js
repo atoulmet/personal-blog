@@ -8,17 +8,18 @@ import SEO from '../components/seo'
 
 class BlogIndex extends Component {
   render() {
-    const { data } = this.props
+    const { data, location } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const {pathname} = location
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={location} title={siteTitle}>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Introduction pathname={this.props.location.pathname} />
-        <BlogPostList hasSubheader={true} />
+        <Introduction pathname={pathname} />
+        <BlogPostList hasSubheader={true}  pathname={pathname} />
       </Layout>
     )
   }

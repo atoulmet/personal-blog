@@ -27,17 +27,17 @@ const socialLinks = [
 ]
 
 class Footer extends React.PureComponent {
-    getSocialItems = () => (
+    getSocialItems = (localeColor) => (
         socialLinks.map((item, index) => 
         <StyledLink key={`link-${index}`} href={item.link}>
-            <SocialItem key={`social-item-${index}`} src={item.image} target="_blank"></SocialItem>
+            <SocialItem key={`social-item-${index}`} src={item.image} target="_blank" localeColor={localeColor}></SocialItem>
         </StyledLink>
         )
     )
 
     render() {
-        const socialItems = this.getSocialItems()
         const localeColor = getLocaleColor(this.props.location.pathname)
+        const socialItems = this.getSocialItems(localeColor)
         
         return (
             <Container>
@@ -50,17 +50,5 @@ class Footer extends React.PureComponent {
         )
     }
 }
-
-const socialQuery = graphql`
-    query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpeg/" }) {
-        childImageSharp {
-            fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-        }
-        }
-    }
-    }
-`
 
 export default Footer

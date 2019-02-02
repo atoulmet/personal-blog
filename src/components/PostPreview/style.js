@@ -13,11 +13,18 @@ export const Container = styled.div`
     }
 `
 
+//Modifer pour avoir width proportionnelle
 export const Content = styled.div`
     max-width: 900px;
     padding-top: 15px;
     padding-bottom: 30px;
-    
+    span {
+        width: 0%;
+        &:hover {
+            transition-duration: 0.3s;
+            width: 30%;
+        }
+    }
 `
 
 export const Title = styled(Link)`

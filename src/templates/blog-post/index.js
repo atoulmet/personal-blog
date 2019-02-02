@@ -25,13 +25,13 @@ class BlogPostTemplate extends React.Component {
 
           <LinksWrapper alignRight={!!next && !previous}>
             {previous && (
-              <NavLink to={previous.fields.slug} rel="prev">
+              <NavLink to={`blog/${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </NavLink>
             )}
 
             {next && (
-              <NavLink to={next.fields.slug} rel="next">
+              <NavLink to={`blog/${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </NavLink>
             )}

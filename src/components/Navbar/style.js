@@ -28,6 +28,20 @@ export const NavItem = styled(Link)`
 
 export const ItemWrapper = styled.div`
       margin-right: 15px;
+      &:hover {
+            span {
+                  &:after {
+                        transition-duration: 0.6s;
+                        width: 100%;      
+                  }     
+            }
+      }
+      span {
+            &:after {
+                  width: ${({isActive}) => isActive ? '100%' : 0 };
+            }
+            
+      }
 `;
 
 export const DesktopWrapper = styled.div`

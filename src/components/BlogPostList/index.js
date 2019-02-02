@@ -34,6 +34,7 @@ return (
                         text={node.excerpt} 
                         duration={duration}
                         cover_image={cover_image}
+                        pathname={this.props.pathname}
                         />
                     )
                 })}

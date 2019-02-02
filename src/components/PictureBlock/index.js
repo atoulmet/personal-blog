@@ -27,7 +27,7 @@ class PictureBlock extends React.PureComponent {
                 <Wrapper>
                     <Title>
                         <HighlightedItem localeColor={localeColor}>Alexia Toulmet</HighlightedItem></Title>
-                    <Subtitle>> Xiya Seed</Subtitle>
+                    <Subtitle>Xiya's life</Subtitle>
                 </Wrapper>
             </Container>
         )

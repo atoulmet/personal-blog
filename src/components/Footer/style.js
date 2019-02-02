@@ -20,6 +20,10 @@ export const SocialItem = styled.img`
     height: 50px;
     width: 50px;
     margin: 0 15px;
+    &:hover {
+        transition-duration: 0.2s;
+        background-color: ${({localeColor}) => localeColor};
+    }
 `
 
 export const StyledLink = styled.a`
