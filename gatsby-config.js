@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Alexia Toulmet's personal website`,
     author: `Alexia Toulmet`,
-    description: `A blog to tell the world about my freelancer life.`,
+    description: `I'm Alexia, a fullstack software engineer. I'm passionate about the tech industry, gender diversity and creation.`,
     siteUrl: `https://www.alexiatoulmet.com/`,
     social: {
       twitter: `xiyaseed`,
