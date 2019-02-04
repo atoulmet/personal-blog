@@ -31,7 +31,7 @@ export const ItemWrapper = styled.div`
       &:hover {
             span {
                   &:after {
-                        transition-duration: 0.6s;
+                        transition-duration: 0.2s;
                         width: 100%;      
                   }     
             }
