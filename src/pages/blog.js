@@ -14,8 +14,8 @@ class BlogPage extends Component {
     return (
         <Layout location={location} title={siteTitle}> 
         <SEO
-            title="All posts"
-            keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+            title="Blog"
+            keywords={[`blog`, `freelancer`, `tech`, `react`]}
         />
         <BlogPostList hasSubheader={false} pathname={pathname}/>
         </Layout>

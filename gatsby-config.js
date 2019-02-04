@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Alexia Toulmet personal site`,
+    title: `Alexia Toulmet's personal website`,
     author: `Alexia Toulmet`,
     description: `A blog to tell the world about my freelancer life.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://www.alexiatoulmet.com/`,
     social: {
       twitter: `xiyaseed`,
+      github: 'atoulmet'
     },
   },
   plugins: [
@@ -57,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-133757342-1`,
       },
     },
     // `gatsby-plugin-feed`,

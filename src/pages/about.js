@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import styled from "styled-components"
 
 import Layout from '../components/Layout'
+import SEO from '../components/seo'
 import PictureBlock from '../components/PictureBlock'
 import {media} from '../components/Common/helpers'
 
@@ -36,6 +37,10 @@ export default class aboutPage extends Component {
 
   return (
   <Layout location={this.props.location}>
+    <SEO
+              title="About"
+              keywords={[`developer`, `freelancer`, `toulmet`, `react`, `asia`]}
+          />
     <Container>
       <Content>
       <PictureBlock pathname={this.props.location.pathname} />

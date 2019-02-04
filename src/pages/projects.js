@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components"
 
+import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import ProjectItem from '../components/ProjectItem'
 import {HighlightedItem} from '../components/Common'
@@ -47,7 +48,11 @@ class ProjectsPage extends Component {
         const projectsItem = this.getProjectsItems()
 
             return (
-            <Layout location={this.props.location}>
+                <Layout location={this.props.location}>
+                <SEO
+                title="Projects"
+                keywords={[`blog`, `javascript`, `react`]}
+            />
                 <Container>
                     <Title>
                         <HighlightedItem>

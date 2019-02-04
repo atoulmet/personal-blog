@@ -15,8 +15,8 @@ class BlogIndex extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title="Home"
+          keywords={[`blog`, `alexia`, `freelancer`, `paris`]}
         />
         <Introduction pathname={pathname} />
         <BlogPostList hasSubheader={true}  pathname={pathname} />
