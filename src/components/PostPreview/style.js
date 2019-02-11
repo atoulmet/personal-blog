@@ -9,7 +9,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     ${media.maxWidth.md} {
-        padding: 15px 30px 0px 30px;
+        margin: 15px 30px 0px 30px;
+        max-width: 100%;
     }
 `
 
@@ -25,6 +26,9 @@ export const Content = styled.div`
             width: 30%;
         }
     }
+    ${media.maxWidth.md} {
+        max-width: 100%;
+    }
 `
 
 export const Title = styled(Link)`
@@ -32,6 +36,9 @@ export const Title = styled(Link)`
     font-size: 24px;
     color: ${colors.black};
     box-shadow: none;
+    ${media.maxWidth.md} {
+        white-space: initial;
+    }
 `
 
 export const Date = styled.p`

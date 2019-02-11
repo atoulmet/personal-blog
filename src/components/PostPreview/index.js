@@ -1,34 +1,42 @@
 import React from 'react'
+import MediaQuery from 'react-responsive'
 
 import { Container, Title, Date, Text, Duration, DateWrapper, Content, Cover } from './style'
-import {getLocaleColor, HighlightedItem} from '../Common'
+import { getLocaleColor, HighlightedItem } from '../Common'
 
 class DesktopNavbar extends React.PureComponent {
     render() {
-        const {title, date, text, duration, cover_image, pathname} = this.props
+        const { title, date, text, duration, cover_image, pathname } = this.props
         const localeColor = getLocaleColor(pathname)
 
         return (
             <Container>
-                    {cover_image && <Cover url={cover_image.publicURL} />}
+                {cover_image && <Cover url={cover_image.publicURL} />}
                 <Content>
-                    <HighlightedItem localeColor={localeColor}>
                     <Title {...this.props} >
-                        {title} 
+                    <MediaQuery minDeviceWidth={700}>
+                        {(mobile) => (
+                            mobile ? (
+                            <HighlightedItem localeColor={localeColor}>
+                                {title}
+                            </HighlightedItem>) :
+                                title
+                        )}
+                    </MediaQuery>
+
                     </Title>
-                </HighlightedItem>
-                <DateWrapper>
-                <Date>
-                    {date}
-                </Date>
-                • 
+                    <DateWrapper>
+                        <Date>
+                            {date}
+                        </Date>
+                        •
                 <Duration>
-                    {duration}
-                </Duration>
-                </DateWrapper>
-                <Text>
-                    {text}
-                </Text>
+                            {duration}
+                        </Duration>
+                    </DateWrapper>
+                    <Text>
+                        {text}
+                    </Text>
                 </Content>
             </Container>
         )
