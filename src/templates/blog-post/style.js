@@ -16,6 +16,9 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
     max-width: 900px;
+    ${media.maxWidth.md} {
+        max-width: 100%;
+    }
 `
 
 export const Image = styled.div`
@@ -30,6 +33,9 @@ export const Title = styled.h1`
     margin-bottom: 5px;
     font-size: 24px;
     font-weight: 600;
+    ${media.maxWidth.md} {
+        white-space: initial;
+    }
 `
 
 export const Date = styled.p`
