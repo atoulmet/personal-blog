@@ -47,4 +47,5 @@ export const Wrapper = styled.div`
 `
 
 export const Description = styled.div`
+    max-width: 500px;
 `

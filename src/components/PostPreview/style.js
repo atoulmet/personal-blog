@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 //Modifer pour avoir width proportionnelle
 export const Content = styled.div`
-    max-width: 900px;
+    max-width: 700px;
     padding-top: 15px;
     padding-bottom: 30px;
     span {
@@ -31,7 +31,7 @@ export const Content = styled.div`
     }
 `
 
-export const Title = styled(Link)`
+export const StyledLink = styled(Link)`
     font-weight: 600;
     font-size: 24px;
     color: ${colors.black};
@@ -39,6 +39,10 @@ export const Title = styled(Link)`
     ${media.maxWidth.md} {
         white-space: initial;
     }
+`
+
+export const PostDescription = styled.div`
+    margin-top: 15px;
 `
 
 export const Date = styled.p`
@@ -56,7 +60,8 @@ export const Duration = styled.p`
 `
 
 export const Cover = styled.div`
-    background-image: url("${props => props.url}");
+    background: url("${props => props.url}") center no-repeat;
+    background-size: cover;
     width: 100%;
     height: 200px;
     border-radius: 5px;

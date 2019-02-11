@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../../components/Layout'
 import SEO from '../../components/seo'
-import {Container, Content, Image, Title, Date, NavLink, LinksWrapper} from './style'
+import { Container, Content, Image, Title, Date, NavLink, LinksWrapper, Header } from './style'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,27 +16,28 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <Container>
-        <Content>
-          {coverPicture && <Image picture={coverPicture.publicURL} />}
-        <Title>{post.frontmatter.title}</Title>
-        
-        <Date> {post.frontmatter.date}</Date>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Content>
+            <Header>
+            <Title>{post.frontmatter.title}</Title>
+            <Date> {post.frontmatter.date}</Date>
+            {coverPicture && <Image picture={coverPicture.publicURL} />}
+            </Header>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <LinksWrapper alignRight={!!next && !previous}>
-            {previous && (
-              <NavLink to={`blog/${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
-              </NavLink>
-            )}
+            <LinksWrapper alignRight={!!next && !previous}>
+              {previous && (
+                <NavLink to={`blog/${previous.fields.slug}`} rel="prev">
+                  ← {previous.frontmatter.title}
+                </NavLink>
+              )}
 
-            {next && (
-              <NavLink to={`blog/${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
+              {next && (
+                <NavLink to={`blog/${next.fields.slug}`} rel="next">
+                  {next.frontmatter.title} →
               </NavLink>
-            )}
-          </LinksWrapper>
-        </Content>
+              )}
+            </LinksWrapper>
+          </Content>
         </Container>
       </Layout>
     )

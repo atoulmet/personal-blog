@@ -23,6 +23,14 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     padding: 60px 0;
+    p {
+        margin-bottom: 0;
+    }
+    a {
+        &:hover {
+            box-shadow: 0 1px 0 0 currentColor;
+        }
+    }
 
 `
 

@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 import { media } from './helpers'
 
-
 export const getLocaleColor = (pathname) => {
     const params = pathname.split('/')
     const firstParam = params[1]

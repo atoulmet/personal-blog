@@ -10,12 +10,50 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 60px 0;
+    font-size: 21px;
+    font-weight: 400;
     ${media.maxWidth.lg} {
         padding: 60px 30px;
     }
+    blockquote {
+        margin-left: 0;
+    }
+
+    ul {
+        margin-top: 30px;
+        list-style: none;
+        li {
+            display: flex;
+            flex-direction: row;
+            &:before {
+                padding-right: 15px;
+                content: '•';
+            
+        }
+        }
+    }
+
+    p {
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -.003em;
+        margin-bottom: 0
+        margin-top: 38px;;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 56px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+    a {
+        box-shadow: inset 0 -1px ${colors.black};
+    }
+    .gatsby-resp-image-link {
+        box-shadow: none;
+    }
 `
 export const Content = styled.div`
-    max-width: 900px;
+    max-width: 750px;
     ${media.maxWidth.md} {
         max-width: 100%;
     }
@@ -23,24 +61,29 @@ export const Content = styled.div`
 
 export const Image = styled.div`
     background-image: url("${({picture}) => picture}");
-    width: 100%;
-    height: 200px;
-    border-radius: 5px;
+    min-height: 400px;
+    margin: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 `
 
 export const Title = styled.h1`
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 24px;
-    font-weight: 600;
+    margin: 24px 0;
+    font-weight: 400;
+    line-height: 1.25;
     ${media.maxWidth.md} {
         white-space: initial;
     }
 `
 
+export const Header = styled.div`
+    margin-bottom: 45px;
+`
+
 export const Date = styled.p`
     color: ${colors.grey};
-    margin-bottom: 15px;
+    margin: 0 15px 15px 15px;
 `
 
 export const LinksWrapper = styled.div`
@@ -51,6 +94,10 @@ export const LinksWrapper = styled.div`
 
 export const NavLink = styled(Link)`
     color: ${colors.black};
-    box-shadow: none;
-    font-size: 16px;
+    box-shadow: none !important;
+    font-size: 21px;
+    width: 100%;
+    text-decoration: underline;
+    padding: 30px;
+
 `

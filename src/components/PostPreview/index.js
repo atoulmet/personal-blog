@@ -1,7 +1,7 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
 
-import { Container, Title, Date, Text, Duration, DateWrapper, Content, Cover } from './style'
+import { Container, StyledLink, Date, Text, Duration, DateWrapper, Content, Cover, PostDescription } from './style'
 import { getLocaleColor, HighlightedItem } from '../Common'
 
 class DesktopNavbar extends React.PureComponent {
@@ -11,9 +11,10 @@ class DesktopNavbar extends React.PureComponent {
 
         return (
             <Container>
-                {cover_image && <Cover url={cover_image.publicURL} />}
                 <Content>
-                    <Title {...this.props} >
+                    <StyledLink {...this.props} >
+                {cover_image && <Cover url={cover_image.publicURL} />}
+                <PostDescription>
                     <MediaQuery minDeviceWidth={700}>
                         {(mobile) => (
                             mobile ? (
@@ -21,10 +22,11 @@ class DesktopNavbar extends React.PureComponent {
                                 {title}
                             </HighlightedItem>) :
                                 title
+                            
                         )}
                     </MediaQuery>
-
-                    </Title>
+                    </PostDescription>
+                    </StyledLink>
                     <DateWrapper>
                         <Date>
                             {date}

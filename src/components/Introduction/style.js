@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Text = styled.div`
     font-size: 40px;
-    font-weight: 100;
+    font-weight: 200;
     max-width: 900px;
     text-align: center;
     ${media.maxWidth.sm} {
