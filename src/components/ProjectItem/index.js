@@ -11,7 +11,7 @@ class ProjectItem extends React.PureComponent {
                 <Image picture={picture ? picture.publicURL: '' } />
                 <Wrapper>
                     <Title>{title}</Title>
-                    <Description>{description}</Description>
+                    <Description dangerouslySetInnerHTML={{ __html: description }}></Description>
                 </Wrapper>
             </Container>
         )

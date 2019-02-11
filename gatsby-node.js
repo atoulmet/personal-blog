@@ -62,13 +62,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
     const type = getNode(node.parent).sourceInstanceName
-    // set a `type` field to the node which will be "posts", "projects" or "trips"
     createNodeField({ name: 'type', node, value: type })
-  }// in the "Starter blog" this part already exists and adds a `slug` field to the node, here we add another field `type`
-  // if (node.internal.type === `MarkdownRemark`) {
-  //   // `sourceInstanceName` here is the name of the folder the .md file is in
-  //   const type = getNode(node.parent).sourceInstanceName
-  //   // set a `type` field to the node which will be "posts", "projects" or "trips"
-  //   createNodeField({ name: 'type', node, value: type })
-  // }
+  }
 }

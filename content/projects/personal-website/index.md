@@ -1,6 +1,6 @@
 ---
 title: Personal Website
-picture: ''
+picture: './house-outline.png'
 ---
 
-The most amazing personal website on earth (for real). I mean it.
+The personal website you're navigating through right now 🚀

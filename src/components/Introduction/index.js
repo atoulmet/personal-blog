@@ -11,8 +11,7 @@ class Introduction extends Component {
     <Container>
       <Text>
         I'm Alexia, <HighlightedIntro localeColor={localeColor}>a</HighlightedIntro><HighlightedIntro localeColor={localeColor}> fullstack</HighlightedIntro><HighlightedIntro localeColor={localeColor}> software</HighlightedIntro><HighlightedIntro localeColor={localeColor}> engineer</HighlightedIntro>.
-        I'm passionate about the tech industry, 
-        gender diversity and creation.
+        I'm passionate about creation, gender diversity and always eager to learn new things.
       </Text>
     </Container>
   )

@@ -29,7 +29,7 @@ const socialLinks = [
 class Footer extends React.PureComponent {
     getSocialItems = (localeColor) => (
         socialLinks.map((item, index) => 
-        <StyledLink key={`link-${index}`} href={item.link}>
+        <StyledLink key={`link-${index}`} href={item.link} target="_blank">
             <SocialItem key={`social-item-${index}`} src={item.image} target="_blank" localeColor={localeColor}></SocialItem>
         </StyledLink>
         )

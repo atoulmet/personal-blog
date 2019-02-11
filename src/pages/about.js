@@ -32,6 +32,9 @@ const AboutText = styled.div`
   }
 `
 
+const Paragraph = styled.p`
+`
+
 export default class aboutPage extends Component {
   render () {
 
@@ -45,7 +48,28 @@ export default class aboutPage extends Component {
       <Content>
       <PictureBlock pathname={this.props.location.pathname} />
       <AboutText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <Paragraph>
+          I'm Alexia, a fullstack software engineer.
+        </Paragraph>
+        <Paragraph>
+          After a master's Degree at Sciences Po Paris, and several fulfilling 
+          experiences in Project Management in the Tech industry, I decided I 
+          actually wanted to make things - be able to create stuff on my own.
+        </Paragraph>
+
+        <Paragraph>
+          I studied software engineering at 42 and worked at the PayFit rocket
+          before deciding to start my own projects, and becoming a freelancer. 
+          When building apps, I love to use ReactJS, Redux, NodeJS but I'm a quick learner and adapt really fast.
+        </Paragraph>
+
+        <Paragraph>
+        I'm passionate about creation, gender diversity and always eager to learn new things. 
+        I had the amazing opportunity to learn Chinese in Taipei and Beijing for almost 2 years  - so I'd probably add Asia to the list of my passions.
+        </Paragraph>
+        <Paragraph>
+        Can't wait to discover more 
+        </Paragraph>
       </AboutText>
       </Content>
     </Container>

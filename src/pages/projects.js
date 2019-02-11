@@ -36,9 +36,9 @@ class ProjectsPage extends Component {
         const projects = this.props.data.allMarkdownRemark.edges
 
         return (projects.map((elem, index) => {
-            const {excerpt, frontmatter} = elem.node
+            const {frontmatter} = elem.node
             return (
-                <ProjectItem title={frontmatter.title} description={excerpt} picture={frontmatter.picture} key={`project-item-${index}`} />
+                <ProjectItem title={frontmatter.title} description={elem.node.html} picture={frontmatter.picture} key={`project-item-${index}`} />
             )
         }
         ))
@@ -86,6 +86,7 @@ export const pageQuery = graphql`
         edges {
             node {
             excerpt
+            html
             frontmatter {
                 title
                 picture {
