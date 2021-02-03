@@ -46,8 +46,8 @@ const Bottom = styled.p`
   text-align: center;
 `
 
-class ProjectsPage extends Component {
-  getProjectsItems = projects => {
+const ProjectsPage = props => {
+  const getProjectsItems = projects => {
     return projects.map((elem, index) => {
       const { frontmatter } = elem.node
       const {
@@ -76,37 +76,33 @@ class ProjectsPage extends Component {
     })
   }
 
-  render() {
-    const projects = this.props.data.allMarkdownRemark.edges
-    const professionalProjects = projects.filter(
-      elem => elem.node.frontmatter.type === 'professional'
-    )
-    const personalProjects = projects.filter(
-      elem => elem.node.frontmatter.type === 'personal'
-    )
-    const localeColor = getLocaleColor(this.props.location.pathname)
+  const projects = props.data.allMarkdownRemark.edges
+  const professionalProjects = projects.filter(
+    elem => elem.node.frontmatter.type === 'professional'
+  )
+  const personalProjects = projects.filter(
+    elem => elem.node.frontmatter.type === 'personal'
+  )
+  const localeColor = getLocaleColor(props.location.pathname)
 
-    return (
-      <Layout location={this.props.location}>
-        <SEO title="Projects" keywords={[`blog`, `javascript`, `react`]} />
-        <Container>
-          <Title>
-            <HighlightedItem localeColor={localeColor}>
-              Professional
-            </HighlightedItem>
-          </Title>
-          <Wrapper>{this.getProjectsItems(professionalProjects)}</Wrapper>
+  return (
+    <Layout location={props.location}>
+      <SEO title="Projects" keywords={[`blog`, `javascript`, `react`]} />
+      <Container>
+        <Title>
+          <HighlightedItem localeColor={localeColor}>
+            Professional
+          </HighlightedItem>
+        </Title>
+        <Wrapper>{getProjectsItems(professionalProjects)}</Wrapper>
 
-          <Title>
-            <HighlightedItem localeColor={localeColor}>
-              Personal
-            </HighlightedItem>
-          </Title>
-          <Wrapper>{this.getProjectsItems(personalProjects)}</Wrapper>
-        </Container>
-      </Layout>
-    )
-  }
+        <Title>
+          <HighlightedItem localeColor={localeColor}>Personal</HighlightedItem>
+        </Title>
+        <Wrapper>{getProjectsItems(personalProjects)}</Wrapper>
+      </Container>
+    </Layout>
+  )
 }
 
 export default ProjectsPage

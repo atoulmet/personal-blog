@@ -1,72 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { ResponsiveContainer, Navlist, NavItem, NavLink, NavbarTop, MenuTitle, LinkWrapper } from './style'
+import {
+  ResponsiveContainer,
+  Navlist,
+  NavItem,
+  NavLink,
+  NavbarTop,
+  MenuTitle,
+  LinkWrapper,
+} from './style'
 import PictureBlock from '../PictureBlock'
 import BurgerMenu from '../BurgerMenu'
-import { getLocaleColor,  getMenuData, HighlightedItem } from '../Common'
+import { getLocaleColor, getMenuData, HighlightedItem } from '../Common'
 
+const ResponsiveNavbar = props => {
+  const [isOpened, setOpen] = useState(false)
 
-class ResponsiveNavbar extends React.PureComponent {   
-    state= {
-        isOpened: false
-    }
+  const getMenuItems = (localeColor, pathname) => {
+    const menuDataWithActive = getMenuData(pathname)
 
-    getMenuItems = (localeColor, pathname) => {
-        const menuDataWithActive = getMenuData(pathname)
+    return menuDataWithActive.map(({ title, link, isActive }) => {
+      return (
+        <NavLink isActive={isActive} localeColor={localeColor} key={link}>
+          <NavItem to={link}>{title}</NavItem>
+        </NavLink>
+      )
+    })
+  }
 
-        return (
-            menuDataWithActive.map(({ title, link, isActive }) => {
-                    return (
-                        <NavLink isActive={isActive} localeColor={localeColor} key={link}>
-                            <NavItem to={link} >
-                                {title}
-                            </NavItem>
-                        </NavLink>
-                    )
-                
-            }
-            )
-        )
-    }
+  const toggleMenu = e => {
+    e.preventDefault()
+    setOpen(!isOpened)
+  }
 
-    toggleMenu = (e) => {
-        e.preventDefault()
-        this.setState({ isOpened: !this.state.isOpened})
-    }
+  const { pathname } = props
+  const localeColor = getLocaleColor(pathname)
+  const menuItems = getMenuItems(localeColor, pathname)
+  const isAboutPage = pathname === '/about/'
 
-    render() {
-        const { pathname } = this.props
-        const { isOpened } = this.state
-        const localeColor = getLocaleColor(pathname)
-        const menuItems = this.getMenuItems(localeColor, pathname)
-        const isAboutPage = pathname === '/about/'
+  return (
+    <ResponsiveContainer isOpened={isOpened}>
+      <NavbarTop isAboutPage={isAboutPage} isOpened={isOpened}>
+        {isOpened && (
+          <HighlightedItem localeColor={localeColor}>
+            <MenuTitle>Menu</MenuTitle>
+          </HighlightedItem>
+        )}
 
-        return (
-            <ResponsiveContainer isOpened={isOpened}>
-                <NavbarTop isAboutPage={isAboutPage} isOpened={isOpened}>
-                    {isOpened && 
-                        <HighlightedItem localeColor={localeColor}>
-                            <MenuTitle>
-                                Menu
-                            </MenuTitle>
-                        </HighlightedItem>
-                    }
-                    
-                    {!isOpened && !isAboutPage && (
-                        <LinkWrapper to='/'>
-                            <PictureBlock pathname={pathname} hidePicture={true}/>
-                        </LinkWrapper>
-                    )
-                    }
-                    <BurgerMenu isOpened={isOpened} toggleMenu={this.toggleMenu} />
-                </NavbarTop>
-                <Navlist isOpened={isOpened}>
-                    {menuItems}
-                </Navlist>
-                
-            </ResponsiveContainer>
-        )
-    }
+        {!isOpened && !isAboutPage && (
+          <LinkWrapper to="/">
+            <PictureBlock pathname={pathname} hidePicture={true} />
+          </LinkWrapper>
+        )}
+        <BurgerMenu isOpened={isOpened} toggleMenu={toggleMenu} />
+      </NavbarTop>
+      <Navlist isOpened={isOpened}>{menuItems}</Navlist>
+    </ResponsiveContainer>
+  )
 }
 
 export default ResponsiveNavbar

@@ -33,12 +33,14 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-responsive": "^6.1.1",
+    "react-responsive-modal": "^6.0.1",
     "react-typography": "^0.16.13",
     "styled-components": "^4.1.3",
     "typography": "^0.16.17",
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
+    "@babel/plugin-transform-classes": "^7.12.13",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2"
