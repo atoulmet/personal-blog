@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ProjectModal from '../ProjectModal'
+import 'react-responsive-modal/styles.css'
 import {
   Container,
   Image,
