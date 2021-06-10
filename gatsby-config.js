@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://www.alexiatoulmet.com`,
     social: {
       twitter: `xiyaseed`,
-      github: 'atoulmet'
+      github: 'atoulmet',
     },
   },
   plugins: [
@@ -42,23 +42,23 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-              rel: "nofollow"
-            }
+              target: '_blank',
+              rel: 'nofollow',
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
-          options: {
-            classPrefix: "language-",
-            inlineCodeMarker: null,
-            aliases: {},
-            showLineNumbers: false,
-            noInlineHighlight: false,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
           },
-        },
-          
+
           {
             resolve: `gatsby-remark-responsive-iframe`,
           },
@@ -97,6 +97,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
   ],
 }

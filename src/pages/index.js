@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { graphql } from 'gatsby'
 
 import Introduction from '../components/Introduction'
@@ -10,7 +10,7 @@ class BlogIndex extends Component {
   render() {
     const { data, location } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const {pathname} = location
+    const { pathname } = location
 
     return (
       <Layout location={location} title={siteTitle}>
@@ -19,7 +19,7 @@ class BlogIndex extends Component {
           keywords={[`blog`, `alexia`, `freelancer`, `paris`]}
         />
         <Introduction pathname={pathname} />
-        <BlogPostList hasSubheader={true}  pathname={pathname} />
+        <BlogPostList hasSubheader={true} pathname={pathname} />
       </Layout>
     )
   }
