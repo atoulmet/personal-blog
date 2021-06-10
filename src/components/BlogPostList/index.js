@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql, withPrefix } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import PostPreview from '../PostPreview'
 import { Subtitle, Container } from './style'
@@ -20,7 +20,6 @@ export default class DesktopNavbar extends React.PureComponent {
               {posts.map(({ node }, index) => {
                 const title = node.frontmatter.title || node.fields.slug
                 const { duration, cover_image } = node.frontmatter
-                const isBlogPage = location.pathname === withPrefix('/blog')
 
                 return (
                   <PostPreview
